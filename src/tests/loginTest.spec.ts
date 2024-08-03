@@ -2,6 +2,7 @@ import { test } from "@playwright/test";
 import LoginPage from "../pages/LoginPage";
 import { decrypt, encrypt } from "../utils/CryptoJSUtils";
 import { encryptEnvFile, decryptEnvFile } from "../utils/EncryptEnvFiles";
+import logger from "../utils/LoggerUtils";
 
 
 // Using existing "page" fixture from playwright
@@ -15,6 +16,7 @@ test("Login test", async ({ page }) => {
 
     const homePage = await loginPage.clickLoginButton();
     await homePage.expectHomePageTitleToBeVisible();
+    logger.info("Login Test has been completed");
 });
 
 // test.skip("ENV test", async ({ page }) => {
