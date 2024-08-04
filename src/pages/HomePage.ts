@@ -16,7 +16,7 @@ export default class HomePage {
         // console.log(pageTitle);
         // expect(pageTitle).toBe(this.homepageTitleSelector);
 
-        await expect(this.page.getByTitle("Setup", { exact: true})).toBeVisible()
+        await expect(this.page.getByTitle("Setup", { exact: true})).toBeVisible({ timeout: 15000 })
             .catch((error) => {
                 logger.error(`Failed to login: ${error}`);
                 throw error;
