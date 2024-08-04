@@ -9,6 +9,13 @@
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.45.3",
+    "@types/crypto-js": "^4.2.2",
     "@types/node": "^22.1.0"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.4.5",
+    "moment-timezone": "^0.5.45",
+    "winston": "^3.13.1"
   }
 }

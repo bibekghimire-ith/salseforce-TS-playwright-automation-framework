@@ -7,6 +7,15 @@ import { defineConfig, devices } from '@playwright/test';
 // import dotenv from 'dotenv';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
 
+if (!process.env.NODE_ENV) {
+  require('dotenv').config({path:`${__dirname}//src//config//.env`});
+} else {
+  // CMD: set NODE_ENV=qa
+  // Terminal: export NODE_ENV="qa" -> printenv NODE_ENV  -> echo $NODE_ENV
+  require('dotenv').config({ path: `${__dirname}//src//config//.env.${process.env.NODE_ENV}` });
+}
+
+
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
@@ -16,8 +25,9 @@ export default defineConfig({
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
-  /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
+  // /* Retry on CI only */
+  // retries: process.env.CI ? 2 : 0,
+  retries: 3,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */

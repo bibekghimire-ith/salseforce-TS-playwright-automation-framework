@@ -1,0 +1,9 @@
+2024-08-04T14:04:35+05:45 [error]: Failed to login: Error: [31mTimed out 5000ms waiting for [39m[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m
+
+Locator: getByTitle('Setup', { exact: true })
+Expected: visible
+Received: <element(s) not found>
+Call log:
+  [2m- expect.toBeVisible with timeout 5000ms[22m
+[2m  - waiting for getByTitle('Setup', { exact: true })[22m
+
