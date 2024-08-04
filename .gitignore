@@ -5,3 +5,6 @@ node_modules/
 /playwright/.cache/
 /tests-examples
 test.md
+src/logging/test_error.
+src/logging/test_run.log
+ex.ts
